@@ -1,0 +1,389 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Property Report</title>
+   
+
+
+
+
+
+    <style>
+        /* --- General styles for both screen and print --- */
+        body {
+         
+            font-family: sans-serif;
+            margin: 0;
+          
+
+
+
+            padding: 0;
+           
+
+            background-color: #f4f4f4; /* Gray background for web view */
+            color: #333;
+        }
+
+        .page-container {
+            width: 8.5in; /* Standard paper width */
+            height: 11in; /* Standard paper height */
+            margin: 1cm auto; /* Center page on screen, add some margin */
+          
+
+
+            background: white;
+            box-shadow: 0 0 0.5cm rgba(0,0,0,0.5); /* Shadow for screen view */
+            padding: 0.5in; /* Inner padding for content */
+            box-sizing: border-box;
+            /* Flexbox for layout */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h1, h2, h3 {
+            color: #000;
+        }
+
+        .property-image {
+           width: 100%;
+            
+            height: 400px; object-fit: cover;
+          
+            margin-bottom: 19px;
+        
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        /* --- Print-specific styles using @media print --- */
+        @media print {
+            body {
+                background-color: #fff;
+            }
+            .page-container {
+                width: 8.5in;
+                height: 11in;
+                margin: 0;
+                box-shadow: none;
+                padding: 0.5in;
+            }
+            /* Ensure all elements are visible and flow naturally */
+            .footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 10px;
+                background: white;
+            }
+            /* Forcing content into a single page is difficult in HTML,
+            but setting fixed height and avoiding page breaks helps */
+            .content {
+                height: calc(100% - 1in - 50px); /* Adjust height for content area */
+                overflow: hidden; /* Hide overflowing content if it exceeds the page */
+            }
+        }
+
+        body {
+    margin: 0; /* Ensure no default body margin pushes the container down or right */
+    padding: 0;
+    height: 100vh; /* Ensures the container positions relative to the full viewport height */
+}
+
+.top-right-container {
+   
+   position: fixed; /* Positions the container relative to the browser window */
+
+    top: 43px; /* Distance from the top edge */
+  
+    right: 10px; /* Distance from the right edge */
+   
+  }
+.top-right-container-2 {position: fixed; top: 110px;  right: 10px; }
+
+   .top-right-container , .top-right-container-2 {  display: flex; /* Aligns the input and button horizontally */
+    align-items: center; /* Vertically centers the items within the container */
+   
+
+
+
+    gap: 5px; /* Adds a small gap between the input and button */
+   
+
+    background-color: #f0f0f0; /* Light background for the box */
+    padding: 5px;
+    border-radius: 5px; /* Rounds the corners of the container */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a subtle shadow */
+}
+
+
+
+#addAnotherPropertyTextBox {
+    padding: 5px;
+   
+
+
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 120px; /* Small fixed width for the text box */
+}
+
+#addAnotherPropertyTextBox-2 {    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 120px; /* Small fixed width for the text box */}
+#addProperty , #addProperty-2 {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #007bff; /* A cool blue background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#addProperty:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+    </style>
+</head>
+<body>
+  
+
+
+   
+
+
+
+    
+
+
+    <div class="page-container page-container-1 page-div" id="page-container">
+       
+
+        <div class="header">
+            
+            <h1>Property Report: <span class="property-name">83 Pershing Ave</span></h1>
+            <p><strong>Date:</strong> <span id="todayDateParagraph">July 14, 2026</span> </p>
+       
+        </div>
+
+        <div class="content">
+           
+            <img src="https://ahprd1cdn.csgpimgs.com/i2/h9ZYbf3XA__TSEueGKP9db-umQg7LgCtUcruzycnWGo/116/image.jpg" alt="Property Image" class="property-image">
+            
+           
+            <h2>Property Details</h2>
+           
+            <div class="details-grid">
+              
+
+                <div>
+                    
+                  
+                   <p class="price">Price: </p>
+                    <p class="celling-height">Celling Height 83 Pershing Ave</p>
+                    <p class="docks">Docks: None</p>
+               
+
+                </div>
+              
+                <div>
+                    
+                   
+                    <p class="area">Sq. Ft.: 8,561</p>
+                    <p class="year-built">Year Built: 1930</p>
+                    <p class="property-class">Type: Warehouse</p>
+                </div>
+            </div>
+
+            <h2>Description</h2>
+           
+           
+
+            <p class="description">The property is 83 Pershing Ave, a Warehouse building located in the Fishkill Submarket. The building's location is 83 Pershing Ave, Poughkeepsie, NY 12601. This is a Warehouse building that sits on a 0.84 AC Lot and was built in 1930. What is available at this location is 8,561 SF. </p>
+       
+
+
+        </div>
+        <div class="footer">
+           
+            <p>For more information, contact Hudson Commercial Real Estate Corp. at 845 454-1444 or visit our website.</p>
+       
+        </div>
+    
+
+    </div><div class="page-container page-container-1 page-div" id="page-div-1">
+       
+
+        <div class="header">
+            
+            <h1>Property Report: <span class="property-name">49 Oakley St</span></h1>
+            <p><strong>Date:</strong> <span>July 14, 2026</span> </p>
+       
+        </div>
+
+        <div class="content">
+           
+            <img src="https://ahprd1cdn.csgpimgs.com/i2/8iyeq5d5fSPzdvHx2OhRBki7eiehEHLUPZjSdbNtojA/116/image.jpg" alt="Property Image" class="property-image">
+            
+           
+            <h2>Property Details</h2>
+           
+            <div class="details-grid">
+              
+
+                <div>
+                    
+                  
+                   <p class="price"><strong>Price</strong> For Sale $2,499,000</p>
+                    <p class="celling-height"><strong>Celling Height </strong> 15'</p>
+                    <p class="docks"><strong>Docks</strong> 1 ext </p>
+               
+
+                </div>
+              
+                <div>
+                    
+                    <p class="area"><strong> Area </strong> 49 Oakley St </p>
+                    <p class="year-built"><strong>Year Built</strong> 1970</p>
+                    <p class="property-class"><strong>Type</strong> Service</p>
+                </div>
+            </div>
+
+            <h2>Description</h2>
+           
+           
+
+            <p class="description">The property is 49 Oakley St, a Service building located in the Fishkill Submarket. The building's location is 49 Oakley St, Poughkeepsie, NY 12601. This is a Service building that sits on a 1.58 AC Lot and was built in 1970. What is available to lease at this location is 49 Oakley St. The max amount of space you can lease here would be 49 Oakley St. The owners are asking $2,499,000 for the sale price.</p>
+       
+
+
+        </div>
+
+        <div class="footer">
+           
+            <p>For more information, contact Hudson Commercial Real Estate Corp. at 845 454-1444 or visit our website.</p>
+       
+        </div>
+    
+
+    </div><div class="page-container page-container-1 page-div" id="page-div-2">
+       
+
+        <div class="header">
+            
+            <h1>Property Report: <span class="property-name">188 Cottage St</span></h1>
+            <p><strong>Date:</strong> <span>July 14, 2026</span> </p>
+       
+        </div>
+
+        <div class="content">
+           
+            <img src="https://ahprd1cdn.csgpimgs.com/i2/JoAOF9fzIqAQHG0gj0894_34CW2UOeoc3-BHSJdSUg4/116/image.jpg" alt="Property Image" class="property-image">
+            
+           
+            <h2>Property Details</h2>
+           
+            <div class="details-grid">
+              
+
+                <div>
+                    
+                  
+                   <p class="price"><strong>Price</strong> For Sale $1,400,000</p>
+                    <p class="celling-height"><strong>Celling Height </strong> 188 Cottage St</p>
+                    <p class="docks"><strong>Docks</strong> None </p>
+               
+
+                </div>
+              
+                <div>
+                    
+                    <p class="area"><strong> Area </strong> 188 Cottage St </p>
+                    <p class="year-built"><strong>Year Built</strong> 1960</p>
+                    <p class="property-class"><strong>Type</strong> Warehouse</p>
+                </div>
+            </div>
+
+            <h2>Description</h2>
+           
+           
+
+           
+            <p class="description">The property is 188 Cottage St, a Warehouse building located in the Fishkill Submarket. The building's location is 188 Cottage St, Poughkeepsie, NY 12601. This is a Warehouse building that sits on a 0.94 AC Lot and was built in 1960. What is available to lease at this location is 188 Cottage St. The max amount of space you can lease here would be 188 Cottage St. The owners are asking $1,400,000 for the sale price.</p>
+       
+
+
+      
+        </div>
+
+        <div class="footer">
+           
+            <p>For more information, contact Hudson Commercial Real Estate Corp. at 845 454-1444 or visit our website.</p>
+       
+        </div>
+    
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+<script src="jquery.min.js"></script> <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+</script>
+
+<script type="text/javascript">
+
+
+
+
+
+
+
+
+
+      
+  
+      
+      
+        
+  
+      
+         
+
+
+        
+     
+
+
+
+</script></body></html>
